@@ -1,0 +1,13 @@
+.outer-box {
+    width: 300px;
+    height: 500px;
+    border: 1px solid #000;
+    padding: 10px;
+    border-radius: 10px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
