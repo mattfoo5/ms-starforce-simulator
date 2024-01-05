@@ -1,27 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import sosImage from "./images/sos.jpg";
+let stars = 0;
 
-class Interface extends React.Component {
-    
+const enhanceButton = document.getElementById('enhance-button');
+enhanceButton.addEventListener('click', onButtonClick);
+
+function renderStars() {
+    /* TODO: create visual stars UI */
+    document.getElementById('stars').textContent = stars;
 }
 
-class Simulator extends React.Component {
-    render() {
-        return (
-            <div className="outer-box">
-                <img
-                    src={sosImage}
-                    alt="SOS Image"
-                    className="centered-image"
-                />
-                <button className="enhance-button">Enhance</button>
-            </div>
-        );
-    }
+function onButtonClick() {
+    stars++;
+    console.log(stars);
+    renderStars();
 }
-
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<Simulator />);
