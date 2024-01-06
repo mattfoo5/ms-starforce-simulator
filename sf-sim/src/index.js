@@ -70,10 +70,7 @@ function enhance() {
     if (currStar !== 25) {
         let isStarcatch = document.getElementById('sc-check').checked;
         let isSafeguarded = document.getElementById('sg-check').checked;
-        
-        console.log(isStarcatch);
         console.log(isSafeguarded);
-
         let randomValue = Math.random() * 100;
         let outcome = getOutcome(randomValue, currStar);
         
@@ -84,11 +81,23 @@ function enhance() {
             currStar--;
            }
         }
-        else {
-            currStar = 12;
+        else { // if outcome is destruction
+            if (isSafeguarded) {
+                if (currStar === 15) { // if current star is 15, star remains the same
+                    /* do nothing */
+                }
+                if (currStar === 16) { // if current star is 16, reduce the star
+                    currStar--;
+                }
+                else { // if current star is neither 15 nor 16, destruction occurs
+                    currStar = 12;
+                }
+            }
+            else { // if not safeguarded, destruction occurs
+                currStar = 12;
+            }
         }
         nextStar = currStar + 1;
-        console.log(outcome);
         //renderProbabilities(star);
         renderStars();
     }
