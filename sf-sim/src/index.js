@@ -1,15 +1,93 @@
-let stars = 0;
+const probabilities = new Map([
+    [0, { success: 95, failure: 5, destruction: 0}],
+    [1, { success: 90, failure: 10, destruction: 0}],
+    [2, { success: 85, failure: 15, destruction: 0}],
+    [3, { success: 85, failure: 15, destruction: 0}],
+    [4, { success: 80, failure: 20, destruction: 0}],
+    [5, { success: 75, failure: 25, destruction: 0}],
+    [6, { success: 70, failure: 30, destruction: 0}],
+    [7, { success: 65, failure: 35, destruction: 0}],
+    [8, { success: 60, failure: 40, destruction: 0}],
+    [9, { success: 55, failure: 45, destruction: 0}],
+    [10, { success: 50, failure: 50, destruction: 0}],
+    [11, { success: 45, failure: 55, destruction: 0}],
+    [12, { success: 40, failure: 60, destruction: 0}],
+    [13, { success: 35, failure: 65, destruction: 0}],
+    [14, { success: 30, failure: 70, destruction: 0}],
+    [15, { success: 30, failure: 70, destruction: 0}],
+    [16, { success: 30, failure: 67.9, destruction: 2.1}],
+    [17, { success: 30, failure: 67.9, destruction: 2.1}],
+    [18, { success: 30, failure: 67.2, destruction: 2.8}],
+    [19, { success: 30, failure: 67.2, destruction: 2.8}],
+    [20, { success: 30, failure: 63, destruction: 7}],
+    [21, { success: 30, failure: 63, destruction: 7}],
+    [22, { success: 3, failure: 77.6, destruction: 19.4}],
+    [23, { success: 2, failure: 68.6, destruction: 29.4}],
+    [24, { success: 1, failure: 59.4, destruction: 39.6}],
+]); 
+
+let currStar = 0;
+let nextStar = 1;
 
 const enhanceButton = document.getElementById('enhance-button');
-enhanceButton.addEventListener('click', onButtonClick);
+enhanceButton.addEventListener('click', enhance);
 
 function renderStars() {
     /* TODO: create visual stars UI */
-    document.getElementById('stars').textContent = stars;
+    document.getElementById('id-curr-star').textContent = currStar;
+    document.getElementById('id-next-star').textContent = nextStar;
 }
 
-function onButtonClick() {
-    stars++;
-    console.log(stars);
-    renderStars();
+function renderProbabilities(star) {
+    /* TODO: create text for probabilities */
+    //let currProb = getCurrProbabilities(star);
+    //document.getElementById('')
+}
+
+function getCurrProbabilities(num) {
+    return probabilities.get(num);
+}
+
+function getOutcome(randVal, star) {
+    let currProb = getCurrProbabilities(star);
+    success = currProb.success; // defines upper limit of success chance
+    failure = currProb.failure + success; // defines upper limit of failure chance
+    destruction = 100 - currProb.destruction; // defines lower values of boom chance
+    let ret = '';
+
+    if (randVal <= success) {
+        ret = 'success';
+    } else if (randVal > success && randVal < destruction) {
+        ret = 'fail';
+    }
+    else if (randVal >= destruction) {
+        ret = 'boom';
+    }
+    return ret;
+}
+
+function enhance() {
+    if (currStar !== 25) {
+        let randomValue = Math.random() * 100;
+        let outcome = getOutcome(randomValue, currStar);
+        
+        if (outcome === 'success') {
+            currStar++;
+        } else if (outcome === 'fail') {
+           if (currStar > 15 && currStar !== 20) {
+            currStar--;
+           }
+        }
+        else {
+            currStar = 12;
+        }
+        nextStar = currStar + 1;
+        console.log(outcome);
+        renderProbabilities(star);
+        renderStars();
+    }
+    else {
+        alert('Max starforce achieved, cannot enhance');
+    }
+    
 }
