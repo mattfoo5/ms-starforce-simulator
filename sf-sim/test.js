@@ -4,3 +4,4 @@ button.addEventListener('click', onButtonClick);
 function onButtonClick() {
     alert("button clicked");
 }
+<p class="next-star"></p>

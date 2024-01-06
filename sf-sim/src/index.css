@@ -4,8 +4,8 @@ h1 {
 }
 
 .outer-box {
-    width: 300px;
-    height: 400px;
+    width: 370px;
+    height: 300px;
     border: 1px solid #000;
     padding: 10px;
     border-radius: 10px;
@@ -17,45 +17,91 @@ h1 {
     right: 0;
 }
 
+.image-info-section {
+    /*border: 1px solid #000;*/
+    height: 130px;
+    margin-top: 10%;
+}
+
+.image-box {
+    display: flex;
+    width: 120px;
+    height: 120px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    margin-top: 1%;
+    align-items: center;
+}
+
+.info-box {
+    width: 240px;
+    height: 120px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    margin-top: -32.5%; 
+    margin-left: 35%;
+}
+
+.button-box {
+    display: flex;
+    margin-top: 23%;
+    margin-left: 1%;
+    width: 390px;
+    height: 40px;
+    align-items: center;
+}
+
+.starcatch-safeguard-section {
+    margin-top: 0.2%;
+}
+
+.checkbox-label {
+    margin-left: 4%;
+    margin-right: 45%;
+}
+
+.starcatch-box {
+    width: 48%;
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+
+.safeguard-box {
+    width: 48%;
+    margin-top: -5.8%;
+    margin-left: 50%;
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+
 .centered-image {
-    width: 100px; /* Set the desired width */
-    height: 100px; /* Set the desired height */
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    margin-left: 12%;
 }
 
 .enhance-button {
-    margin-left: 10%;
-    margin-top: 80%;
+    margin-left: 25%;
     font-size: 16px;
-    padding: 20px;
+    padding: 10px;
     background-color: green;
     color: #fff;
-    /*border: black;*/
     cursor: pointer;
     border-radius: 10px;
 }
 
 .cancel-button {
-    margin-left: 13%;
-    margin-top: 80%;
+    margin-left: 2%;
     font-size: 16px;
-    padding: 20px;
+    padding: 10px;
     background-color: gray;
     color: white;
     cursor: pointer;
     border-radius: 10px;
 }
 
-.curr-star {
-    margin-left: 13%;
-    font-size: 20px;
-}
-
-.next-star {
-    margin-left: 50%; 
-    margin-top: -14%;
-    font-size: 20px;
+.star-info {
+    margin-top: 2%;
+    margin-left: 5%;
+    font-size: 17px;
 }

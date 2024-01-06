@@ -34,14 +34,14 @@ enhanceButton.addEventListener('click', enhance);
 
 function renderStars() {
     /* TODO: create visual stars UI */
-    document.getElementById('id-curr-star').textContent = currStar;
-    document.getElementById('id-next-star').textContent = nextStar;
+    document.getElementById('curr-star').textContent = currStar;
+    document.getElementById('next-star').textContent = nextStar;
 }
 
 function renderProbabilities(star) {
     /* TODO: create text for probabilities */
-    //let currProb = getCurrProbabilities(star);
-    //document.getElementById('')
+    let currProb = getCurrProbabilities(star);
+    document.getElementById('probability-info')
 }
 
 function getCurrProbabilities(num) {
@@ -68,6 +68,12 @@ function getOutcome(randVal, star) {
 
 function enhance() {
     if (currStar !== 25) {
+        let isStarcatch = document.getElementById('sc-check').checked;
+        let isSafeguarded = document.getElementById('sg-check').checked;
+        
+        console.log(isStarcatch);
+        console.log(isSafeguarded);
+
         let randomValue = Math.random() * 100;
         let outcome = getOutcome(randomValue, currStar);
         
@@ -83,7 +89,7 @@ function enhance() {
         }
         nextStar = currStar + 1;
         console.log(outcome);
-        renderProbabilities(star);
+        //renderProbabilities(star);
         renderStars();
     }
     else {

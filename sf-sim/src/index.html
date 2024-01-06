@@ -8,14 +8,33 @@
         <h1>Matt's Starforce Simulator</h1>
         <div class="outer-box">
             <div>
-                <img class="centered-image" src="images/sos.jpg" alt="SOS"/>
-                <p class="curr-star"><span id="id-curr-star">0</span> Star >></p>
-                <p class="next-star"><span id="id-next-star">1</span> Star</p>
-                <button class="enhance-button" id="enhance-button">Enhance</button>
-                <button class="cancel-button" id="cancel-button">Cancel</button>
+                <div class="image-info-section">
+                    <div class="image-box">
+                        <img class="centered-image" src="images/sos.jpg" alt="SOS"/>
+                    </div>
+                    <div class="info-box">
+                        <p class="star-info">
+                            <span id="curr-star">0</span> Star >>
+                            <span id="next-star">1</span> Star
+                        </p>
+                    </div>
+                    <div class="button-box">
+                        <button class="enhance-button" id="enhance-button">Enhance</button>
+                        <button class="cancel-button" id="cancel-button">Cancel</button>
+                    </div>
+                </div>
+                <div class="starcatch-safeguard-section">
+                    <div class="starcatch-box">
+                        <label class="checkbox-label">Starcatch&nbsp;</label>
+                        <input type="checkbox" id="sc-check">
+                    </div>
+                    <div class="safeguard-box">
+                        <label class="checkbox-label">Safeguard</label>
+                        <input type="checkbox" id="sg-check">
+                    </div>
+                </div>
             </div>
         </div>
-        
         <script src="index.js"></script>
     </body>
 </html>
