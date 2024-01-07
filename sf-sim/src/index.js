@@ -14,7 +14,7 @@ const probabilities = new Map([
     [12, { success: 40, failure: 60, destruction: 0}],
     [13, { success: 35, failure: 65, destruction: 0}],
     [14, { success: 30, failure: 70, destruction: 0}],
-    [15, { success: 30, failure: 70, destruction: 0}],
+    [15, { success: 30, failure: 67.9, destruction: 2.1}],
     [16, { success: 30, failure: 67.9, destruction: 2.1}],
     [17, { success: 30, failure: 67.9, destruction: 2.1}],
     [18, { success: 30, failure: 67.2, destruction: 2.8}],
@@ -25,6 +25,19 @@ const probabilities = new Map([
     [23, { success: 2, failure: 68.6, destruction: 29.4}],
     [24, { success: 1, failure: 59.4, destruction: 39.6}],
 ]); 
+
+const boomProbabilities = new Map([
+    [15, {destruction: 3}],
+    [16, {destruction: 3}],
+    [17, {destruction: 3}],
+    [18, {destruction: 4}],
+    [19, {destruction: 4}],
+    [20, {destruction: 10}],
+    [21, {destruction: 10}],
+    [22, {destruction: 20}],
+    [23, {destruction: 30}],
+    [24, {destruction: 40}], 
+]);
 
 let currStar = 0;
 let nextStar = 1;
@@ -48,11 +61,34 @@ function getCurrProbabilities(num) {
     return probabilities.get(num);
 }
 
-function getOutcome(randVal, star) {
+function getBoomProbabilities(num) {
+    return boomProbabilities.get(num);
+}
+
+function getOutcome(randVal, star, starcatch) {
+    let success, failure, destruction;
     let currProb = getCurrProbabilities(star);
-    success = currProb.success; // defines upper limit of success chance
-    failure = currProb.failure + success; // defines upper limit of failure chance
-    destruction = 100 - currProb.destruction; // defines lower values of boom chance
+    if (starcatch) {
+        if (star < 15) {
+            success = currProb.success * 1.05;
+            failure = 100;
+            destruction = 100 - currProb.destruction; 
+        }
+        else {
+            let destructionOrig = getBoomProbabilities(star).destruction;
+            success = currProb.success * 1.05
+            failure = (100 - success) * ((100 - destructionOrig) / 100) + success;
+            destruction = 100 - ((100 - success) * (destructionOrig / 100));
+        } 
+    }
+    else {
+        //currProb = getCurrProbabilities(star);
+        success = currProb.success; // defines upper limit of success chance
+        failure = currProb.failure + success; // defines upper limit of failure chance
+        destruction = 100 - currProb.destruction; // defines lower values of boom chance
+    }
+    console.log(success, failure, destruction);
+    console.log(randVal);
     let ret = '';
 
     if (randVal <= success) {
@@ -70,15 +106,14 @@ function enhance() {
     if (currStar !== 25) {
         let isStarcatch = document.getElementById('sc-check').checked;
         let isSafeguarded = document.getElementById('sg-check').checked;
-        console.log(isSafeguarded);
         let randomValue = Math.random() * 100;
-        let outcome = getOutcome(randomValue, currStar);
-        
+        let outcome = getOutcome(randomValue, currStar, isStarcatch);
+        console.log(outcome);
         if (outcome === 'success') {
             currStar++;
         } else if (outcome === 'fail') {
-           if (currStar > 15 && currStar !== 20) {
-            currStar--;
+            if (currStar > 15 && currStar !== 20) {
+                currStar--;
            }
         }
         else { // if outcome is destruction
@@ -86,7 +121,7 @@ function enhance() {
                 if (currStar === 15) { // if current star is 15, star remains the same
                     /* do nothing */
                 }
-                if (currStar === 16) { // if current star is 16, reduce the star
+                else if (currStar === 16) { // if current star is 16, reduce the star
                     currStar--;
                 }
                 else { // if current star is neither 15 nor 16, destruction occurs
