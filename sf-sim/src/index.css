@@ -122,9 +122,13 @@ h1 {
     margin-top: 2%;
 }
 
+.meso-amount {
+    font-size: 13px;
+}
+
 .required-meso-label {
     margin-left: 3%;
-    margin-right: 25%;
+    margin-right: 22%;
     font-size: 12px;
 }
 

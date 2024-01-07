@@ -47,6 +47,7 @@ enhanceButton.addEventListener('click', enhance);
 
 function renderStars() {
     /* TODO: create visual stars UI */
+    updateCost();
     document.getElementById('curr-star').textContent = currStar;
     document.getElementById('next-star').textContent = nextStar;
 }
