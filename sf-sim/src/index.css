@@ -5,7 +5,7 @@ h1 {
 
 .outer-box {
     width: 370px;
-    height: 300px;
+    height: 270px;
     border: 1px solid #000;
     padding: 10px;
     border-radius: 10px;
@@ -17,10 +17,51 @@ h1 {
     right: 0;
 }
 
-.image-info-section {
+.scroll-sf-trans-section {
     /*border: 1px solid #000;*/
+    height: 30px;
+}
+
+.scroll-box {
+    margin-left: 1%;
+    margin-top: -1%;
+}
+
+.sf-box {
+    margin-left: 34%;
+    margin-top: -9.5%;
+}
+
+.transfer-box {
+    margin-left: 67%;
+    margin-top: -9.5%;
+}
+
+.scroll-button {
+    width: 120px;
+    padding: 8px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.sf-button {
+    width: 120px;
+    padding: 8px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.transfer-button {
+    width: 120px;
+    padding: 8px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.image-info-section {
+    /*border: 1px solid #000; */
     height: 130px;
-    margin-top: 10%;
+    margin-top: 3%;
 }
 
 .image-box {
@@ -42,9 +83,9 @@ h1 {
     margin-left: 35%;
 }
 
-.button-box {
+.button-section {
     display: flex;
-    margin-top: 23%;
+    margin-top: 2%;
     margin-left: 1%;
     width: 390px;
     height: 40px;
@@ -57,7 +98,8 @@ h1 {
 
 .checkbox-label {
     margin-left: 4%;
-    margin-right: 45%;
+    margin-right: 40%;
+    font-size: 12px;
 }
 
 .starcatch-box {
@@ -69,9 +111,21 @@ h1 {
 .safeguard-box {
     width: 48%;
     margin-top: -5.8%;
-    margin-left: 50%;
+    margin-left: 51%;
     border: 1px solid #000;
     border-radius: 10px;
+}
+
+.meso-section {
+    border: 1px solid #000;
+    border-radius: 10px;
+    margin-top: 2%;
+}
+
+.required-meso-label {
+    margin-left: 3%;
+    margin-right: 25%;
+    font-size: 12px;
 }
 
 .centered-image {
