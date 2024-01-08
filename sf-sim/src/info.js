@@ -28,16 +28,26 @@ function calculateCost() {
 }
 
 function updateCost() {
-    console.log('here');
     newCost = calculateCost();
     document.getElementById('meso-cost').textContent = newCost.toLocaleString();
 }
 
+function updateRates() {
+    newSuccess = parseFloat(getCurrProbabilities(currStar).success).toFixed(1);
+    newFailure = parseFloat(getCurrProbabilities(currStar).failure).toFixed(1);
+    document.getElementById('success-chance').textContent = newSuccess;
+    document.getElementById('failure-chance').textContent = newFailure;
+}
+
 function initStartup() {
     initStar = 0;
+    initSuccess = parseFloat(getCurrProbabilities(initStar).success).toFixed(1);
+    initFailure = parseFloat(getCurrProbabilities(initStar).failure).toFixed(1);
     initCost = 100 * Math.round((itemLevel ** 3) * (initStar + 1) / 2500 + 10);
     document.getElementById('curr-star').textContent = 0;
     document.getElementById('next-star').textContent = 1;
+    document.getElementById('success-chance').textContent = initSuccess;
+    document.getElementById('failure-chance').textContent = initFailure;
     document.getElementById('meso-cost').textContent = initCost.toLocaleString();
 }
 
