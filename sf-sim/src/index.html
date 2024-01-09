@@ -5,7 +5,6 @@
         <link rel="stylesheet" type="text/css" href="index.css">
     </head>
     <body>
-        <h1>Matt's Starforce Simulator</h1>
         <div class="outer-box">
             <div>
                 <div class="scroll-sf-trans-section">
@@ -26,14 +25,19 @@
                     </div>
                     <div class="info-box">
                         <p class="star-info">
-                            <span id="curr-star"></span> Star >>
+                            <span id="curr-star"></span> Star
+                            <i class="arrow"></i>&nbsp;
                             <span id="next-star"></span> Star
                         </p>
                         <p class="success-info">
                             Success Chance: <span id="success-chance"></span>%
                         </p>
                         <p class="failure-info">
-                            Failure Chance: <span id="failure-chance"></span>%
+                            Failure (<span id="keep-drop"></span>) Chance: 
+                            <span id="failure-chance"></span>%
+                        </p>
+                        <p class="destruction-info">
+                            Destruction Chance: <span id="boom-chance"></span>%
                         </p>
                     </div>
                 </div>

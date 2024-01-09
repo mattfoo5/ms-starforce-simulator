@@ -4,10 +4,10 @@ let nextStar = 1;
 const enhanceButton = document.getElementById('enhance-button');
 enhanceButton.addEventListener('click', enhance);
 
-function renderStars() {
+function renderStars(star) {
     /* TODO: create visual stars UI */
-    updateRates();
-    updateCost();
+    updateRates(star);
+    updateCost(star);
     document.getElementById('curr-star').textContent = currStar;
     document.getElementById('next-star').textContent = nextStar;
 }
@@ -81,7 +81,7 @@ function enhance() {
         }
         nextStar = currStar + 1;
         //renderProbabilities(star);
-        renderStars();
+        renderStars(currStar);
     }
     else {
         alert('Max starforce achieved, cannot enhance');
