@@ -22,7 +22,8 @@ h1 {
     top: 0;
     bottom: 0;
     left: 0;
-    right: 0;
+    right: 0; 
+    cursor: move;
 }
 
 .scroll-sf-trans-section {
@@ -184,6 +185,7 @@ h1 {
     padding-left: 3%;
     padding-bottom: 3%;
     font-size: 15px;
+    opacity: 0.9;
 }
 
 .arrow {
@@ -201,6 +203,7 @@ h1 {
     padding-top: 1%;
     padding-left: 3%;
     font-size: 15px;
+    opacity: 0.9;
 }
 
 .failure-info {
@@ -208,6 +211,7 @@ h1 {
     margin-left: 2%;
     padding-left: 3%;
     font-size: 15px;
+    opacity: 0.9;
 }
 
 .destruction-info {
@@ -215,4 +219,5 @@ h1 {
     margin-left: 2%;
     padding-left: 3%;
     font-size: 15px;
+    opacity: 0.9;
 }

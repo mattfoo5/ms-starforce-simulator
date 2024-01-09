@@ -5,7 +5,6 @@ const enhanceButton = document.getElementById('enhance-button');
 enhanceButton.addEventListener('click', enhance);
 
 function renderStars(star) {
-    /* TODO: create visual stars UI */
     updateRates(star);
     updateCost(star);
     document.getElementById('curr-star').textContent = currStar;
