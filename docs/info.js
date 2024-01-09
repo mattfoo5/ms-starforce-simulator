@@ -22,7 +22,7 @@ function calculateCost(star) {
         mesoCost = 100 * Math.round((itemLevel ** 3) * ((star + 1) ** 2.7) / 7500 + 10);
     }
     else if (star >= 15 && currStar < 25) {
-        mesoCost = 100 * Math.round((itemLevel ** 3) * ((star + 1) ** 2.7) / 22000 + 10);
+        mesoCost = 100 * Math.round((itemLevel ** 3) * ((star + 1) ** 2.7) / 20000 + 10);
     }
     return mesoCost;
 }
