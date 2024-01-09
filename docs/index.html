@@ -5,61 +5,47 @@
         <link rel="stylesheet" type="text/css" href="index.css">
     </head>
     <body>
-        <div class="outer-box">
-            <div>
-                <div class="scroll-sf-trans-section">
-                    <div class="scroll-box">
-                        <button class="enhance-type-button" id="scroll-button">Scroll (lol no)</button>
-                    </div>
-                    <div class="sf-box">
-                        <button class="enhance-type-button" id="sf-button">Star Force</button>
-                    </div>
-                    <div class="transfer-box">
-                        <button class="enhance-type-button" id="transfer-button">Transfer</button>
-                    </div>
-                    
+        <div class="app-container">
+            <section class="enhance-type-section">
+                <button class="enhance-type-button" id="scroll-button">Scroll (lol no)</button>
+                <button class="enhance-type-button" id="sf-button">Star Force</button>
+                <button class="enhance-type-button" id="transfer-button">Transfer</button>
+            </section>
+            <section class="image-info-section">
+                <article class="image-container">
+                    <img class="centered-image" src="images/sos.png" alt="SOS"/>
+                </article>
+                <article class="info-container">
+                    <p class="star-info">
+                        <span id="curr-star"></span> Star
+                        <i class="arrow"></i>&nbsp;
+                        <span id="next-star"></span> Star
+                    </p>
+                    <p class="enhance-info">
+                        Success Chance: <span id="success-chance"></span>%<br>
+                        Failure (<span id="keep-drop"></span>) Chance: <span id="failure-chance"></span>%<br>
+                        Destruction Chance: <span id="boom-chance"></span>%
+                    </p>
+                </article>
+            </section>
+            <section class="starcatch-safeguard-section">
+                <div class="starcatch-container">
+                    <label class="sc-label">Star Catch</label>
+                    <input type="checkbox" class='sc-sg-check' id="sc-check">
                 </div>
-                <div class="image-info-section">
-                    <div class="image-box">
-                        <img class="centered-image" src="images/sos.png" alt="SOS"/>
-                    </div>
-                    <div class="info-box">
-                        <p class="star-info">
-                            <span id="curr-star"></span> Star
-                            <i class="arrow"></i>&nbsp;
-                            <span id="next-star"></span> Star
-                        </p>
-                        <p class="success-info">
-                            Success Chance: <span id="success-chance"></span>%
-                        </p>
-                        <p class="failure-info">
-                            Failure (<span id="keep-drop"></span>) Chance: 
-                            <span id="failure-chance"></span>%
-                        </p>
-                        <p class="destruction-info">
-                            Destruction Chance: <span id="boom-chance"></span>%
-                        </p>
-                    </div>
+                <div class="safeguard-container">
+                    <label class="sg-label">Safeguard</label>
+                    <input type="checkbox" class='sc-sg-check' id="sg-check">
                 </div>
-                <div class="starcatch-safeguard-section">
-                    <div class="starcatch-box">
-                        <label class="sc-label">Starcatch</label>
-                        <input type="checkbox" class='sc-sg-check' id="sc-check">
-                    </div>
-                    <div class="safeguard-box">
-                        <label class="sg-label">Safeguard</label>
-                        <input type="checkbox" class='sc-sg-check' id="sg-check">
-                    </div>
-                </div>
-                <div class="meso-section">
-                    <label class="required-meso-label">Required Mesos:</label> 
-                    <span class="meso-amount" id="meso-cost"></span>
-                </div>
-                <div class="button-section">
-                    <button class="enhance-button" id="enhance-button">Enhance</button>
-                    <button class="cancel-button" id="cancel-button">Cancel</button>
-                </div>
-            </div>
+            </section>
+            <section class="meso-section">
+                <label class="required-meso-label">Required Mesos:</label> 
+                <span class="meso-amount" id="meso-cost"></span>
+            </section>
+            <section class="button-section">
+                <button class="enhance-button" id="enhance-button">Enhance</button>
+                <button class="cancel-button" id="cancel-button">Cancel</button>
+            </section>
         </div>
         <script src="tables.js"></script>
         <script src="info.js"></script>
