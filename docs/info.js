@@ -45,10 +45,31 @@ function updateKeepDrop(star) {
 
 }
 
+function displayChanceTimeRates() {
+    newSuccess = parseFloat(100).toFixed(1);
+    newFailure = parseFloat(0).toFixed(1);
+    newBoom = parseFloat(0).toFixed(1);
+    
+    document.getElementById('success-chance').textContent = newSuccess;
+    document.getElementById('failure-chance').textContent = newFailure;
+    document.getElementById('boom-chance').textContent = newBoom;
+}
+
 function updateRates(star) {
     newSuccess = parseFloat(getCurrProbabilities(star).success).toFixed(1);
     newFailure = parseFloat(getCurrProbabilities(star).failure).toFixed(1);
     newBoom = parseFloat(getCurrProbabilities(star).destruction).toFixed(1);
+
+    document.getElementById('success-chance').textContent = newSuccess;
+    document.getElementById('failure-chance').textContent = newFailure;
+    document.getElementById('boom-chance').textContent = newBoom;
+    updateKeepDrop(star);
+}
+
+function updateToChanceRates(star) {
+    newSuccess = parseFloat(100).toFixed(1);
+    newFailure = parseFloat(0).toFixed(1);
+    newBoom = parseFloat(0).toFixed(1);
 
     document.getElementById('success-chance').textContent = newSuccess;
     document.getElementById('failure-chance').textContent = newFailure;
