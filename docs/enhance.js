@@ -95,7 +95,7 @@ function enhance() {
             chanceCount = 0;
             currStar++;
         } else if (outcome === 'fail') {
-            if (currStar === 15) {
+            if (currStar === 15 || currStar === 20) {
                 chanceCount = 0;
             }
             if (currStar > 15 && currStar !== 20) {
