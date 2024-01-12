@@ -10,7 +10,7 @@ function renderStars(star, count) {
     if (count === 2) {
         updateToChanceRates(star);
         updateCost(star);
-        document.getElementById('enhance-button').style.backgroundColor = 'greenyellow';
+        document.getElementById('enhance-button').style.backgroundColor = 'rgba(234, 218, 73, 0.7)';
         document.getElementById('enhance-button').textContent = 'Chance Time!';
         document.getElementById('enhance-button').style.fontSize = '10px';
     }
